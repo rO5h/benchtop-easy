@@ -1,0 +1,202 @@
+/* ---------- Reset ---------- */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+:root {
+    --bg-top: #271e3e;
+    --bg-bottom: #381e72;
+    --card-bg: #271e3f;
+    --accent: #ae98e0;
+    --text: #fff9ff;
+    --text-muted: #cfcfcf;
+}
+
+body {
+    font-family: 'Roboto', system-ui, -apple-system, sans-serif;
+    color: var(--text);
+    background: linear-gradient(180deg, var(--bg-top) 0%, var(--bg-bottom) 100%);
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+}
+
+.wrap {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 32px;
+}
+/* ---------- Header / Footer ---------- */
+.site-header {
+    padding: 32px 0;
+    text-align: center;
+}
+
+    .site-header .logo {
+        font-size: 24px;
+        font-weight: 700;
+    }
+
+.site-footer {
+    padding: 32px 0;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--text-muted);
+}
+/* ---------- Hero ---------- */
+.hero {
+    padding: 24px 0 80px;
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: center;
+}
+
+.hero-copy h1 {
+    font-size: 36px;
+    line-height: 1.25;
+    font-weight: 700;
+    margin-bottom: 24px;
+}
+
+.hero-lead {
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--text);
+    margin-bottom: 32px;
+    max-width: 420px;
+}
+
+.hero-cta {
+    font-size: 12px;
+    color: var(--text-muted);
+    line-height: 1.8;
+}
+
+    .hero-cta a {
+        color: var(--accent);
+        text-decoration: underline;
+    }
+
+/* ---------- Hero visual / device wrap ----------
+   .device-wrap is a "container query" root: the image and every
+   card inside it are sized in cqw (% of THIS box's width), and
+   positioned in plain % of this box's width/height. That means
+   cards stay pinned to the same spot on the image and scale down
+   together with it — on desktop, tablet, or a small phone — instead
+   of the cards breaking out into a stacked list on narrow screens. */
+.hero-visual {
+    display: flex;
+    justify-content: center;
+}
+
+.device-wrap {
+    position: relative;
+    width: 100%;
+    max-width: 640px;
+    container-type: inline-size;
+}
+
+.device-screen {
+    width: 100%;
+    border-radius: 5px;
+    /*box-shadow: 4px 4px 18px rgba(0, 0, 0, 0.6);*/
+}
+
+/* ---------- Floating feature cards (pinned to the image) ---------- */
+.feature-card {
+    position: absolute;
+    width: 46%;
+    background: var(--card-bg);
+    border: 1px solid var(--accent);
+    border-radius: 3.5cqw;
+    padding: 2.8cqw 4cqw;
+    box-shadow: 4px 4px 18px rgba(0, 0, 0, 0.4);
+}
+
+.eyebrow {
+    text-transform: uppercase;
+    font-size: clamp(7px, 2.4cqw, 10px);
+    font-weight: 500;
+    color: var(--accent);
+    margin-bottom: 1.2cqw;
+}
+
+.card-title {
+    font-size: clamp(9px, 3.3cqw, 14px);
+    font-weight: 700;
+    margin-bottom: 1cqw;
+}
+
+.card-sub {
+    font-size: clamp(7px, 2.3cqw, 10px);
+    color: var(--accent);
+    padding-top: 2cqw;
+    border-top: 1px solid rgba(174, 152, 224, 0.35);
+}
+
+.card-1 {
+    top: 0%;
+    left: -5%;
+    width: 60%;
+}
+
+.card-2 {
+    top: 17%;
+    right: -5%;
+}
+
+.card-3 {
+    top: 51%;
+    left: 2%;
+}
+
+.card-4 {
+    top: 75%;
+    right: -10%;
+    width: 45%;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
+    .hero-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-copy h1 {
+        font-size: 30px;
+    }
+
+    .hero-lead {
+        max-width: 100%;
+    }
+
+    .device-wrap {
+        max-width: 340px;
+    }
+}
+
+@media (max-width: 480px) {
+    .wrap {
+        padding: 0 20px;
+    }
+
+    .hero-copy h1 {
+        font-size: 26px;
+    }
+}
