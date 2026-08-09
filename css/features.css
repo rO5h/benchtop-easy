@@ -21,6 +21,12 @@
 .carousel-viewport {
     overflow: hidden;
     border-radius: 8px;
+    touch-action: pan-y;   /* let vertical page scroll through; horizontal drag is handled by JS */
+    cursor: grab;
+}
+
+.carousel-viewport:active {
+    cursor: grabbing;
 }
 
 .carousel-track {
@@ -83,9 +89,11 @@
     width: auto;
     object-fit: contain;
     background: #c1c1c1;
-    border-radius: 0px;
-    border: 0px solid var(--accent);
+    border-radius: 8px;
+
     box-shadow: 0 12px 28px rgba(0, 0, 0, 0.55), 0 4px 10px rgba(0, 0, 0, 0.35);
+    -webkit-user-drag: none;   /* stop the browser's native image drag ghost */
+    user-select: none;
 }
 
 /* ---------- Arrows (fixed to the carousel, not each slide) ---------- */
