@@ -98,7 +98,7 @@ body {
    card inside it are sized in cqw (% of THIS box's width), and
    positioned in plain % of this box's width/height. That means
    cards stay pinned to the same spot on the image and scale down
-   together with it — on desktop, tablet, or a small phone — instead
+   together with it ï¿½ on desktop, tablet, or a small phone ï¿½ instead
    of the cards breaking out into a stacked list on narrow screens. */
 .hero-visual {
     display: flex;
