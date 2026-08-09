@@ -96,6 +96,14 @@
     user-select: none;
 }
 
+.feature-media--large {
+    height: 640px;
+}
+
+.feature-media--large img {
+    max-width: 700px;
+}
+
 /* ---------- Arrows (fixed to the carousel, not each slide) ---------- */
 .carousel-arrow {
     position: absolute;
